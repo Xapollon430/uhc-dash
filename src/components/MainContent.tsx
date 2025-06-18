@@ -67,7 +67,7 @@ const MainContent: React.FC<MainContentProps> = ({
             {selectedItem.label} Data
           </Typography>
           <Table
-            autoHeight
+            autoHeightw
             pageSize={5}
             rowsPerPageOptions={[5]}
             disableSelectionOnClick
