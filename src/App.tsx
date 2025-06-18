@@ -43,14 +43,11 @@ const App: React.FC = () => {
       >
         <Toolbar>
           <img
-            src="https://upload.wikimedia.org/wikipedia/commons/1/17/Google-flutter-logo.png"
+            src="https://www.uhealthpro.com/wp-content/uploads/2024/12/uhealth-logo-2024.webp"
             alt="Universal Health"
             height={40}
             style={{ marginRight: 16, background: "#fff", borderRadius: 8 }}
           />
-          <Typography variant="h6" noWrap component="div">
-            UHealth
-          </Typography>
         </Toolbar>
       </AppBar>
       <Drawer
