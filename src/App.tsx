@@ -40,12 +40,13 @@ const App: React.FC = () => {
       <AppBar
         position="fixed"
         sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        style={{ background: "white" }}
       >
         <Toolbar>
           <img
-            src="https://www.uhealthpro.com/wp-content/uploads/2024/12/uhealth-logo-2024.webp"
+            src="./uhc-logo.png"
             alt="Universal Health"
-            height={40}
+            height={60}
             style={{ marginRight: 16, background: "#fff", borderRadius: 8 }}
           />
         </Toolbar>
