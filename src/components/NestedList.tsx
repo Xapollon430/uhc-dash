@@ -64,7 +64,16 @@ const NestedList: React.FC<NestedListProps> = ({
               }}
               selected={isSelected}
             >
-              <ListItemIcon>{React.createElement(item.icon)}</ListItemIcon>
+              <ListItemIcon>
+                {(() => {
+                  const iconMap: { [key: string]: React.ElementType } = {
+                    Business: require("@mui/icons-material/Business").default,
+                    Person: require("@mui/icons-material/Person").default,
+                  };
+                  const IconComponent = iconMap[item.icon] || null;
+                  return IconComponent ? <IconComponent /> : null;
+                })()}
+              </ListItemIcon>
               <ListItemText primary={item.label} />
               {item.children ? (
                 open[item.label] ? (

@@ -10,17 +10,16 @@ type MainContentProps = {
   onSelect: (item: NavItem, path: string[]) => void;
 };
 
-
-
 const MainContent: React.FC<MainContentProps> = ({
   selectedItem,
   selectedPath,
   onBreadcrumbClick,
   onSelect,
 }) => {
-  const hasChildren = selectedItem && selectedItem.children && selectedItem.children.length > 0;
+  const hasChildren =
+    selectedItem && selectedItem.children && selectedItem.children.length > 0;
   return (
-    <Box sx={{ flexGrow: 1, p: 3 }}>
+    <Box sx={{ flexGrow: 1, p: 3, marginTop: 8 }}>
       <Toolbar />
       <Box
         sx={{ mb: 2, display: "flex", alignItems: "center", flexWrap: "wrap" }}
@@ -60,7 +59,15 @@ const MainContent: React.FC<MainContentProps> = ({
       </Box>
       {selectedItem ? (
         <>
-          <Box sx={{ background: "#fff", p: 3, borderRadius: 2, boxShadow: 1, mb: hasChildren ? 3 : 0 }}>
+          <Box
+            sx={{
+              background: "#fff",
+              p: 3,
+              borderRadius: 2,
+              boxShadow: 1,
+              mb: hasChildren ? 3 : 0,
+            }}
+          >
             <Typography variant="h5" sx={{ mb: 2, fontWeight: 700 }}>
               {selectedItem.label} Data
             </Typography>
@@ -72,9 +79,14 @@ const MainContent: React.FC<MainContentProps> = ({
             />
           </Box>
           {hasChildren && (
-            <Box sx={{ background: "#fff", p: 3, borderRadius: 2, boxShadow: 1 }}>
+            <Box
+              sx={{ background: "#fff", p: 3, borderRadius: 2, boxShadow: 1 }}
+            >
               <Typography variant="h5" sx={{ mb: 2, fontWeight: 700 }}>
-                {selectedItem.label} {selectedItem.type === "healthcare" ? "Providers" : "Descendants"}
+                {selectedItem.label}{" "}
+                {selectedItem.type === "healthcare"
+                  ? "Providers"
+                  : "Descendants"}
               </Typography>
               <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
                 {selectedItem.children!.map((child) => (
@@ -86,7 +98,9 @@ const MainContent: React.FC<MainContentProps> = ({
                       alignItems: "center",
                       cursor: "pointer",
                     }}
-                    onClick={() => onSelect(child, [...selectedPath, child.label])}
+                    onClick={() =>
+                      onSelect(child, [...selectedPath, child.label])
+                    }
                   >
                     {child.icon && (
                       <span style={{ marginRight: 8 }}>

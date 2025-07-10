@@ -46,13 +46,19 @@ const App: React.FC = () => {
           <img
             src="./uhc-logo.png"
             alt="Universal Health"
-            height={60}
-            style={{ marginRight: 16, background: "#fff", borderRadius: 8 }}
+            height={120}
+            style={{
+              padding: 16,
+              marginRight: 16,
+              background: "#fff",
+              borderRadius: 8,
+            }}
           />
         </Toolbar>
       </AppBar>
       <Drawer
         variant="permanent"
+        style={{ marginTop: 60 }}
         sx={{
           width: drawerWidth,
           flexShrink: 0,
@@ -62,7 +68,7 @@ const App: React.FC = () => {
           },
         }}
       >
-        <Toolbar />
+        <Toolbar style={{ marginTop: 60 }} />
         <NestedList
           items={navData}
           onSelect={(item, path) => setSelectedPath(path)}
